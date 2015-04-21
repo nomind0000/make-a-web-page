@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!--This is the third version, hopefully final for stage 1.-->
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>NoMind's Notes</title>
+  <link rel="stylesheet" type="text/css" href="NoMindProject1.css">
+</head>
+<body>
+  <h1>
+    <b>NoMind's Notes</b>
+  </h1>
+  <div class="lesson">
+    <h2 class="lessonhead">
+        <b>Lesson One</b>
+    </h2>
+    <h3 class=ideahead>
+        <b>What is the web?</b>
+    </h3>
+    <p> 
+      The web is a set of <em>hypertext markup language (html)</em> files, the servers upon which they reside, and the network of individual computers to which the servers connect using the http protocol. The pages are identified by URLs and are joined by hyperlinks.
+    </p>
+    <br>
+    <h3 class="ideahead">
+        <b>What is html?</b>
+    </h3>
+    <p>
+       HTML is the coding language that creates, collects, and formats the content of pages on the web. It produces text content, "markup," i.e., what it looks like, and hyperlinks to other web pages.
+    </p>
+    <br>
+    <h3 class="ideahead">
+      <b>Can you explain tags, elements, and attributes? </b>
+    </h3>
+    <p>
+      It seems that <em>tags</em> are super important, controlling formatting, importing content, and identifying textual content. A tag is enclosed in angled brackets ("less than" and "greater than")that surround it. An <em>element</em> comprises an <em>opening tag</em>, a <em>closing tag</em>, and the <em>content</em> between them. An <em>attribute</em> is a property of a tag that has a <em>value.</em> Consider, for example, the expression below:
+    </p>
+    <br>
+    <p class="indent1">
+      <span class="code">&lt;a href="codepen.io/NoMind/pen/VYJRVK"> NoMind's first web page is here!&lt;/a></span>
+    </p>
+    <br>
+    <p>
+      The expression as a whole is an element with an opening anchor tag, which includes the href attribute that specifies a hyperlink; the content, that is, the expression that appears to the reader as a hyperlink; and a closing anchor tag, 
+        <span class="code">
+          &lt;/a>
+        </span>
+        . This is what the reader sees:
+    </p>
+    <br>
+    <p class="center">
+      <a href="codepen.io/NoMind/pen/VYJRVK"> NoMind's first web page is here!</a>
+    </p>
+    <br>
+    <p>
+      You can insert a photo of NoMind using html. The &lt;img> tag, referred to as a "VOID" tag because it has an opening but no closing tag, makes this easy to do. Using the src (for source) attribute, which has the  value of the URL where the photo can be found, brings the photo to your page.
+    </p>
+    <br>
+    <div class="center">
+      <img src="http://www.threestooges.com/wp-content/uploads/2012/12/CurlyHoward.jpg" alt="He's bashful today"> <h4>NoMind</h4>
+    </div>
+    <p>
+      Of course, there may be no such page, so it is wise to take the precaution of including a message, using the "alt," for alternative attribute This may produce a national security problem, as when the alternative message is something like this one:
+    </p>
+    <br>
+    <div class="center">
+      <font color="purple"><img src="http://www.threestooges.com/wp-content/uploads/2012/12/NoMind.jpg" alt="THIS DOES NOT COMPUTE.... THIS DOES NOT COMPUTE.... THIS DOES NOT COMPUTE. PREPARE SELF-IMMOLATION PROTOCOL. ANNIHILATION BEGINS IN 30 SECONDS."></font>
+    <br>
+    </div>
+    <br>
+    <p>
+      Where were we? Oh, yes--TAGS. Of tags there are two important species. One is referred to as <em>inline</em> and operates on a single line of code within which it is embedded. The other species is a <em>block</em>, which defines a rectangular box around the content. 
+    </p>
+    <p>
+      Inline tags such as &lt;b>,&lt;span>,and &lt;img>seem to be more common, at least at stage zero, than block tags such as &lt;p> and &lt;div>. The notion of a defined block is easily understood by visualizing a box around a paragraph of text defined by &lt;p>.
+    </p>
+    <br>
+    <h3 class="ideahead">
+      <b>How do <span class="code">&lt;span></span> and <span class="code">&lt;div></span> work? </b>
+    </h3>
+    <p>
+      Block tags "contain" things. This means, I think, that you can manipulate the contents of the tag in uniform ways. Thus, it is possible to create uniform style features for an element. Assigning class attributes allows you to style the content of multiple tags in the same way. <span class="code">&lt;div></span> creates a box within which all features assigned to that element are uniform, unless a nested box requires something different. Similarly, different elements designating the same class, as 
+      <span class="code">
+        &lt;div class="<em>class</em>">
+      </span> 
+      or 
+      <span class="code">&lt;h2 class="<em>class</em>">
+      </span> 
+      can be treated the same way as specified by the user in CSS, the companion program to HTML that supplies most characteristics of style.
+    </p>
+    <p>
+      The "div" tag contains things in blocks, whereas the "span" tag contains things "inline," i.e., within a sequence of text characters which would not necessarily lend themselves to treatment within a rectangular block, as when a sentence begins in one line and ends in another. These tags use the same format for assigning classes, for example:
+    </p>
+    <br>
+    <p>
+      <div class="code">
+        <div class="indent1">
+          &lt;span class="foo">
+          <div class="indent1-1">
+            <em>text_formatted_as_foo</em>
+          </div>
+          &lt;/span>
+        </div>
+      </div>
+    </p>
+    <br>
+    <h3 class="ideahead">
+      <b>What about the structure of HTML documents?</b>
+    </h3>
+    <p>
+      The HTML structure begins with a statement that is is an HTML document, that is, the the <em>doctype</em> is HTML: <span class="code">&lt;!DOCTYPE HTML></span>. This confuses me, though, as I was under the impression that the opening <span class="code">&lt;! </span> signified that a comment, to be ignored by the computer, would follow. Indeed, that is how I have used that expression throughout this document. But I also observe in Andy's Notes that the comment tag is a bit more elaborate than the one I have been using, viz., 
+      <span class="code">
+        &lt;!--COMMENT-->
+      </span>. 
+        Be this as it may, the doctype declaration is followed by the 
+      <span class="code">
+        &lt;html>
+      </span>
+        tag, which embraces all the html to come. The structure also includes a 
+      <span class="code">
+        &lt;head>
+      </span>
+        tag, serving as a container for information about the document that will appear in the browser but not in the document itself. Within the 
+      <span class="code">
+        &lt;head>
+      </span>
+        tag is the 
+      <span class="code">
+        &lt;title>
+      </span>
+        tag, having the form 
+      <span class="code">
+        &lt;title><em>Title</em>&lt;/title>
+      </span>
+        , as well as references to CSS and JS (javascript) files. The core of the document is found within the 
+      <span class="code">
+          &lt;body><em>content of the document</em>&lt;/body>
+        </span>
+        element.
+      </p>   
+    </div>
+    <div class="lesson">
+      <h2 class="lessonhead">
+        <b>Lesson Two</b>
+      </h2>
+      <h3 class="ideahead">
+        <b>Wading into the deeper structure of an HTML page</b>
+      </h3>
+      <p>
+        Lesson two takes us directly to Wikipedia, of all places, following a detour into the download of Chrome and its useful developer tools. Here one finds a web page and, after an additional click or two, a depiction of the structure of the web page, which, though its appearance suspiciously suggests otherwise, is not the code <em>per se</em>. Elements nested within elements, the tree-like structure, are revealed when the sidewise triangles are clicked. Three panels show the page itself as displayed on the WWW, the "elements" of the page (along with several other tabbed display options), and a "style" panel, also with several tabbed options. A few clicks on these tabs would persuade almost anyone that this is hopelessly complicated, that few mortals can master it, and that only a crazy person would even want to master. Alas, we continue, knowing that life is short, ensuring that our mortal nature will not hold us back very long, and that sanity is largely a matter of perspective.
+    </p>
+    <p>
+      The quiz asks us whether "all elements are visible." Got that wrong. It seemed perfectly visible to me, on the "elements" page itself. I think the trick question referred to visibility on the web page. After recovering my self-esteem--I had begun to wonder whether the inability to distinguish the visible from the invisible was a sign of impending madness--I correctly discerned that all elements were rectangular, though I was not entirely convinced that elements such as 
+      <span class="code">
+        &lt;br>
+      </span> 
+      have any shape at all. 
+    </p>
+    <br>
+    <h3>
+      <b>DOM and CSS</b>
+    </h3>
+    <p>
+      HTML defines elements through tags, uses attributes with classes, and, thanks to "DOM," turns tags into elements in a tree."DOM" is the acronym for "Document Object Model," a cross-platform and language independent convention for representing and interacting with HTML objects. The expression, "representing and interacting with HTML objects" sounds like gobbledigook at this point. But DOM seems to be behind it all, somewhere that we cannot see quite yet. "CSS," for Cascading Style Sheets, is the language that provides HTML objects with font, color, background, position, and other attributes. An HTML document includes information on CSS styles, and this information can be seen with our Chrome browser in the style panel on the right. Most significantly, the puzzle is easy to put together because everything on the page is contained in a box (rectangle). This is demonstrated on a posterboard and through an exercise in cutting rectangular shapes from a printed mock-up of a page. In a simple example, four boxes, two of which are nested within a third, are defined by the div tag. They arrange a title, of sorts above an image and associated text, thus:  
+    </p>
+    <br>
+    <div class="code">
+      <p class="indent1">
+      &lt;div>My App&lt;/div><br>
+      &lt;div><br>
+      </p>
+      <p class="indent2">
+        &lt;div>image&lt;/div><br>
+        &lt;div>text&lt;/div><br>
+      </p>
+      <p class="indent1">
+        &lt;/div>
+      </p>
+      <br>
+      <p>
+        From this code we can add "classes," though for now the function of these remains something of a mystery. For example:
+    </p>
+    <br>
+    <div class="code">
+        <p class="indent1">
+        &lt;div class="Title">My App&lt;/div><br>
+        &lt;div class="App"><br>
+        </p>
+        <p class="indent2">
+           &lt;div class="screenshot">image&lt;/div><br>
+           &lt;div class="description">text&lt;/div>
+        </p>
+      
+        <p class=indent1>
+          &lt;/div>
+        </p>
+    </div>
+    <br>
+    <p>No doubt we will soon learn how to use these classes to apply CSS styles.
+    </p>
+    </div>
+  </div>
+  <div class="lesson">
+    <div class="lessonhead">
+    <h2>
+      <b>Lesson Three</b>
+    </h2>
+    </div>
+    <h3 class=ideahead>
+      <b>CSS: Friend or Foe?</b>
+    </h3>
+     <p> 
+        While the intent of CSS, or Cascading Style Sheets, is to simplify style coding by grouping stylistic characteristics into classes that <em>need be defined only once,</em> simplicity does not stand out as its most immediate quality. Actually, I do understand. CSS works through a cascading hierarchy of commands in which many style commands are inherited from parent to child, or from more general to more specific commands. The wikipedia article on inheritance helps to explain this idea and its application:
+     </p>
+     <br>
+     <p class="indent2">
+        "Descendant elements may inherit CSS property values from any ancestor element enclosing them. In general, descendant elements inherit text- related properties, but box-related properties are not inherited."
+     </p>
+     <br>
+     <p>
+        I must confess that I am not quite sure what this distinction means, but when I figure it out, this note should be a helpful reminder of something important. In every case (I think), the command closest to the displayed content, that is, the most "specific" command, trumps the higher level command. The hierarchy is created by nesting blocks within blocks. For our purposes, the most important blocks are supplied by <span class="code">&lt;p></span> and <span class="code>&lt;div></span> elements. We also learn about the use of <span class="code">&lt;!DOCTYPE>, &lt;html>, &lt;body,</span> and other elements that appear in hierarchies of style commands. We also learn that there are three main ways to code style, as follows:
+      </p>
+      <ol>
+       <li>
+          The style can be placed in the <em>head</em>. This is fine for short documents where a particular style applies throughtout the document.
+        </li>
+        <li>
+          The style can be placed in a separate *.css file that is linked to the html document through a link command. This method provides consistency, avoids repetition, and simplifies editing. It is usually the preferred method.
+        </li>
+        <li>
+          The <span class="code"> &lt;style></span>makes this possible, but it is greatly discouraged for the same reasons that method two is preferred. Too much of this and I bet your project will be sent back. Unfortunately, I already used this command before getting to lesson 3.
+        </li>
+      </ol>
+    <p>
+       Colors, which can be defined in more than one way, are applied to containers using these methods. The instructors notes suggest consulting the 
+       <a 
+         href="https://developer.mozilla.org/en-US/docs/Web/Css/Reference">linked reference.
+       </a>
+        Colors and other style properties can be assigned values that apply to a certain kind of element or to a certain kind of user-defined class.
+     </p>
+     <br>
+      <h3 class="ideahead">
+        <b>Selection by Element or Class
+        </b>
+      </h3>
+      <p>
+        "Selection" refers to the assignment of a style trait either to an element or to a class. An element to which such an assignment is made is called a selector. Thus, for example, the following CSS code assigns background and font colors to the h1 element:
+        <br>
+        <br>
+          <p class="code">
+           <p class="indent1">
+              h1 {
+           </p>
+           <p class="indent2">
+           background-color : black;
+             <br>
+           color: white;
+           </p> 
+           <p class="indent1">
+           }
+           </p>
+          </p>
+          <br>
+          <p>
+            This assigns a block background and a white text color to every h1 element.
+          </p> 
+          <p>
+            Classes provide greater flexibility assigning a particular property value to any element the user wishes. The class is easily assigned as follows:
+            <span class="code">
+              &lt;ElementName class="AssignedClassName">
+            </span>.
+            The property is called from the CSS file much as it would be for an element. The class is distinguished from the element in CSS by an introductory period, thus:
+          <br>
+          <br>
+            <p class="code">
+              <p class="indent1">
+                .code {
+              </p>
+              <p class="indent2">
+                font-family: Courier; 
+                <p class="indent1">
+                  }
+                </p>
+              </p>
+            </p>
+            <br>
+            <p>
+
+              In this way any element given the class called "code" will cause the text for that element to assume Courier font.  
+            </p>
+        </p>  
+  </div>
+</div>
+<div class="lesson">
+  <p>
+      That pretty much covers everything NoMind's little brain can absorb before the deadline. He had better stop now and have  <a href="https://144f2a3a2f948f23fc61-ca525f0a2beaec3e91ca498facd51f15.ssl.cf3.rackcdn.com/uploads/food_portal_data/articles/article/hero_letterbox_image/734/compressed_Winnie_the_pooh_1.jpg"> a little something</a>.
+  </p>
+  <br>
+  <div>
+    <div class="center">
+      <img src="http://oilersnation.com/uploads/Image/l_thatsallfolksne-LG.jpg" alt= THAT'S ALL FOLKS!>
+    </div>
+  </div>
+</div>
+</body>
+
+  
+
+
+  
+  
+ 
